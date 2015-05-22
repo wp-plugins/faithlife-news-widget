@@ -52,7 +52,7 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 == Changelog ==
 
 = 1.0.1 =
-* bug fixes
+* Bug fixes
 
 = 1.0 =
 * Faithlife News Widget Released
