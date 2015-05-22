@@ -8,11 +8,11 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically add the latest breaking Christian news to your Wordpress site (new content every 15 minutes).
+Add the latest breaking Christian news to your site, updated every 15 minutes.
 
 == Description ==
 
-Automatically add the latest breaking Christian news to your Wordpress site with the Faithlife News Widget.  [Faithlife News](https://news.faithlife.com) is a Christian news aggregation service that updates every 15 minutes with articles from multiple Christian news sites and blogs. Add the Faithlife News Widget to any widget area on your site. Customize which news channels you want to use. Display up to 10 articles on your site in three different formats. You can also optionally enable [Reftagger](http://reftagger.com/) which will automatically tag all Bible verse references on your site.
+[Faithlife News](https://news.faithlife.com) is a Christian news aggregation service that updates every 15 minutes with articles from multiple Christian news sites and blogs. When you add the Faithlife News Widget to any widget area on your site, up-to-the-minute content will be displayed automatically. Customize your news channel preferences. Display up to 10 article links in three different formats. You can also optionally enable [Reftagger](http://reftagger.com/) which will tag all Bible verse references on your site.
 
 == Installation ==
 
@@ -30,7 +30,7 @@ Faithlife News is a Christian news aggregation service that gathers breaking new
 
 = How often does new content appear? =
 
-News updates every fifteen minutes, if new content is available it will appear in the widget. 
+Every fifteen minutes when new content is available it will appear in the widget. 
 
 = Can I customize the news that shows up on my site? =
 
