@@ -1,6 +1,6 @@
 === Faithlife News Widget ===
 Contributors: mejordan
-Donate link: 
+Donate link: http://michaeljordanmedia.com
 Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
 Requires at least: 3.3
 Tested up to: 4.2.2
