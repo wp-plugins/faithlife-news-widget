@@ -4,7 +4,7 @@ Donate link:
 Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,17 +42,14 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 
 == Screenshots ==
 
-1. Widget options /assets/fln-sample-widgetadmin.png
-2. Title Only Format /assets/fln-sample-titleonly.png
-3. Card Format /assets/fln-sample-card.png
-4. List Format /assets/fln-sample-list.png
-5. For sites with a dark color scheme /assets/fln-sample-dark.png
-6. Reftagger option enabled /assets/fln-sample-reftagger.png
+1. Widget options
+2. Title-only display format
+3. Card display format
+4. List display format
+5. Optional setting for sites with a dark color scheme
+6. With the Reftagger option enabled, Bible verse references on your site will be tagged
 
 == Changelog ==
-
-= 1.0.1 =
-* Updated readme.txt
 
 = 1.0 =
 * Faithlife News Widget Released
