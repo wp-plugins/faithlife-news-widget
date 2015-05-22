@@ -255,6 +255,7 @@ class Faithlife_News_Widget extends WP_Widget {
 		if ( isset( $instance[ 'sources' ] ) ) {
 			$selected_sources = $instance[ 'sources' ];
 		} else {
+			$selected_sources = array();
 			foreach($this->fln_sources as $s) {
 				$selected_sources[$s->ID]->Checked = 1;
 			}

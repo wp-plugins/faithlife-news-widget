@@ -4,7 +4,7 @@ Donate link: http://michaeljordanmedia.com
 Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,10 +51,16 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 
 == Changelog ==
 
+= 1.0.1 =
+* bug fixes
+
 = 1.0 =
 * Faithlife News Widget Released
 
 == Upgrade notice ==
+
+= 1.0.1 =
+Please upgrade to the latest version
 
 = 1.0 =
 Install the first release of this widget
