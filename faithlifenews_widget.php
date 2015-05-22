@@ -3,7 +3,7 @@
 Plugin Name: Faithlife News Widget
 Plugin URI: https://news.faithlife.com
 Description: Add the latest breaking Christian news to your Wordpress site
-Version: 1.0.0
+Version: 1.0.1
 Author: Michael Jordan
 Author URI: http://michaeljordanmedia.com
 Network: true
@@ -19,8 +19,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
-
-ini_set('display_errors', false);
 
 // Block direct requests
 if ( !defined('ABSPATH') )
