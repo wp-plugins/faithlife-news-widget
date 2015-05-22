@@ -1,0 +1,72 @@
+#faithlife_news_widget {
+	width: 100%;
+	background: transparent;
+	padding: 0;
+	border: none;
+} 
+#faithlife_news_widget .faithlifenews_article_listitem_title:hover,
+#faithlife_news_widget a:hover {
+	text-decoration: underline !important;
+}
+#faithlife_news_widget .faithlife_news_widget_light span,
+#faithlife_news_widget .faithlife_news_widget_light a,
+#faithlife_news_widget .faithlife_news_widget_light {
+	color: #444;
+}
+#faithlife_news_widget .faithlife_news_widget_dark span,
+#faithlife_news_widget .faithlife_news_widget_dark a,
+#faithlife_news_widget .faithlife_news_widget_dark {
+	color: #eee;
+}
+#faithlife_news_widget .faithlifenews_article {
+	display:block;
+	margin: 0 0 20px 0;
+	padding: 0;
+	border: none;
+}
+#faithlife_news_widget .faithlife_news_logo {
+	width:100%;
+	display:block;
+	height: 55px;
+	background-size: 100px !important;
+	background-repeat: no-repeat;
+	background-position-x: left;
+	background-position-y: top;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ8AAAA3CAMAAAAlimhRAAAAY1BMVEUAAABnZ2dnZ2dgu0Zgu0Zgu0Zgu0Zgu0Zgu0ZnZ2dnZ2dgu0Zgu0Zgu0ZnZ2dgu0ZnZ2dgu0Zgu0ZnZ2dnZ2dgu0ZnZ2dnZ2dnZ2dgu0ZnZ2dnZ2dnZ2dgu0ZnZ2dgu0ZnZ2cc7aZaAAAAH3RSTlMAgL9Av4DvEGAw75/PMEBQn6/fEFAgr3Dfj88gYHCP5LT9IgAABJhJREFUeF7N2Imy4ioQBuCGsGTdF7Oo5P2f8kpaigxJPObM6M1fNcWpHrE+QZqU4CRhcOZIcW5foU7t89S5fUyp8sS8Rj0iz+vztc8/r49rX3Fyn2rAzYX8kctHAMGVEHINfvZF4GZyAm6u4UTX7xzcaTcRp1jfaThdtYdOnR4xKXXe203i6/YyJznqq3VxADdEl10fNcVOa1LAXKdnhpcXRzn7YnnQl8/VeQED0tKpfcOXTgt9MJnk+51Pmg1W0a99aKJv+IKlr51MLvudxQeQ5SYQZ6Ymo+tLEXXIB4Pd3wq3NgBIqy0dusr5gsP4a18K+6kpzauDviqntDafD9d/N7cZxQGgV5jkiA9zzLfMRdfCPZxnzoXyACBGX/zah/v8ng9fXbm+9SSbcTEBWHxTGJEAyCfQ3/cF3YTpSIWF8FFoAe7TIvXTV5EQT2a19OGZCAOA/M9JABXB92/x8+PiWWAicAH3fcQiwmB5PujSd0Vf29nXWp+BpjgufYEzAZTaBDaOz4j+/MRhtedL0bdI97MvwL0wwBF9DjBzN3haxmHc93yw8k3XH31QdUtuvvKpUmI3VHzbNwC0w71O0xS/V+HCRyjt5hqltLU+Sggi6JZvOYk859zTFNmj68PbLdr3tc61O437/dmuGmrCtc+dFJoqDOY6YQ6wwH7t+gY6p16fm9c+svgsP/pSuwRXLMqVT93mHc5e9L/xkmvrW74RZ7znsy29Irjioo9cn5C66TS7vtEc4Hd8A2De8+VYHK/58xiDQZXKhgPwnf6H3fiAjx7xYXEIFwc4NpuqbARA5u/5qnA64suP+2yIfSCQONiLGPi2Dzc3bAnJ3/GR3/vyEQASs2S4kPbylWLlsx2grbD+r332BqeXCieii0Hk+Hq17TOH8iO+C9pIXYGJ//RlyibRZfHCBx/yBe5DvunPJYBQJuWsLl74yEvfVP3Wh7dGeEVZQCrgDDuLBG6PRxPhJm/5BrxNCCHt2ofUqaN0qA/77Pypawmhob4bzfNopi81TMywS2/7rtOr/gKhqZOjPtsebHIwwALAc265bR/kL33kr3wusNOV3jyPLnt09Pr52SawPgT+pQ/qDm22mIn5BAPwTR5cnB+FxktL5yea/DKrK/JIbf+XPnIPINDlwHmPWhdH80eFMxbzzY8Qj9guI5neUJTqlBmcLBy7HjQRYzyB88UTSiRw4jTxyYFyF9gXEgt9D+CzZ3yIOJZ5/xwjAMlLpdhNfkIYKdFs1Zk5zowBcMUxHvQCy0JJHHuAuPQ9rxcxfAZ42/QJ5S98YNJgOVNmbOZ/j0gPPgPc9jGukg0fxMU8qShwjFH/3SCrKOWG76Z0Vfg+jje9hvx/8cmYgfF5c/SCSuVrkjTj/BUpufd9HySCGx9Ge0FvbFTgiJsMXiGUiOS3feCrzN1fXWxAZHrENcQkXMTy2z7oRbPySXHLBOB3UCxIifK/7oM4jl0fRHEUPc/wPBqj4t/3SaFWvkyJDEc1jwVrcN+T7/sgQR/D4A6W5g4p8SVMFZxHKoIvxkcK/urh8Wc8U5rjZ4Dxesb6f9Zh/gPvah3Izg9SRAAAAABJRU5ErkJggg==');
+}
+#faithlife_news_widget.faithlife_news_widget_dark .faithlife_news_logo {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ8AAAA3CAMAAAAlimhRAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAv4BA7xBgMJ9Qz6/fIHCPTqCsMQAABC5JREFUeF7N2IuygygMBuAkEO5o3v9p92hksKK97bbbf+YMnRxjvxZBp3CIR/jlsP1tX5af9hn5bR+KlB/mVfkL/67PLT73uz5afPnHfVKH+kQ3mT4C8I6InH/sC0NdDhkAzgqOZ/YzFqFDMc5oxS0elOKgxaBorvkARgH+VV9ciul0OgYftmJZNKZf+Zp098ZR9Bh+0Rf6x/KUUfITPiM7vZeWcL3zcZtgCW/71IRP+Pzel6Vlut5ZHACXU6B2mpZhARlFveSD1OeXddo8gGEYs7lKeye1Hn0GrhMRA7/o44AYd59PPFxmktY1i8a/4tO85Bvf3l7hjK6LjZDUl+77dJ6f8+nRPPiGpp66awBMk2isB+AN6K59voimEGvB6n1nll3i5mOyuuj41pe3Nwy3TQBMev5cFVAU1IBeT5eufXTb0NcH7n1Ofbn0Y7uvQY2Oe58/NIDIKVD14xG3n9jylc+ob5fy2OfB252mqu8AjMcJln0OjPnKB4NP3EMfcNlrwuCTwtvdhs59CSCnORpj9LqyOx8hlrWGiLn7kEgROPpum2jrmY1Rdj369O4Wrn35cNuVen9/1olQjR19xyar1baRTFvHQcBl9CVcE4d188BHu8/y0Gf6V+C0yAefop1IHBw9dQqL9Slf1Y7nfH1LZ9LVaOfQZX1NFqmXvto7HvsSaJ7zBS1WF6xaoKGK9BAAXe9/3soLPnzFp8Vkdws4iWa63eOiu/KxlVd84XVfD/V7EoumW+jcp5NrM1F4xkfv+0Ltj64W0mEjZTv4+g6QWev/tW+WFpxYG9WFEA6+Wc59bVF+xDcphiJDi9t8UXr8UrZ3fPAhnx8f8rWj6MRpyqrOd3x01yf8rk9n0zqVeWIgLNspSVrMusO50devh0REefQpVQpiim/5tF9KJkK7GDhpJfZHh4S6S5/7nPSMvj4L9JYPguwToAGz2numq/053PXR+74TYOmLugJMe/nj52eNv/UB/UsfxNIVqBW7+emUB9PhR6E6ZVyvgzCtaqa/xP5f/MvswS9lfzhHXIq1vWDt2PW3HyEQd7sMo06oSkVKhB8L6UxBDYjk4fdirFgPP5yafhzIl8A58/ZiBnC4xUEgLdO8jQGAqejN/QMJYutZHdtyRgQgIY2B2bY9mXWcAVJxxsw2wWeA06nPitv5oKVqOUob6/r3FzbwGeC5D0n8iQ9SXpty1jGp/rtRVi584ptkqVrndJwAotD/4uOEzSdmjQcAFreQuI3rJVLIfN8H3lLz7W6NOQOErKNOMphsxQb+tg+cxGF+wUkFG5dRv0ONJ5v42z6YbR18bKdoQa9BuyN5cV/3QUrp6IOQQtjW8Do2o9D3fWxl8EWxUUdZx4xV591/3wdefajRGSztHlL0EJRMFCTAF+OUor96GNpiWmmNi6AxM+Js/ivAPxK8kI3hgvgyAAAAAElFTkSuQmCC');
+}
+#faithlife_news_widget .faithlifenews_article_list {
+	border: none;
+	background: none;
+	background: transparent;
+}
+
+#faithlife_news_widget .faithlifenews_article_list li {
+	list-style: none;
+	display: block;
+	text-indent: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	background: transparent;
+}
+#faithlife_news_widget .faithlifenews_article_listitem span {
+	display:inline-block;
+}
+#faithlife_news_widget .faithlifenews_article_listitem_image {
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 25%;
+	min-height: 60px;
+	margin: 0 10px 0 0;
+	padding: 0;
+} 
+#faithlife_news_widget .faithlifenews_article_listitem_title {
+	vertical-align:top;
+	width: 65%;
+	font-size: 12px;
+}
+
+
