@@ -62,8 +62,5 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 = 1.0.1 =
 Please upgrade to the latest version
 
-= 1.0 =
-Install the first release of this widget
-
 == Arbitrary section 1 ==
 
