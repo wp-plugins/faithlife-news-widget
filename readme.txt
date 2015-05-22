@@ -16,8 +16,8 @@ Add the latest breaking Christian news to your site, updated every 15 minutes.
 
 == Installation ==
 
-1. Upload `faithlifenews-widget.zip.` to the `/wp-content/plugins/` directory and unpack it
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload the plugin `.zip` file to the `/wp-content/plugins/` directory and unpack it
+2. Activate the plugin through the `Plugins` menu in WordPress
 3. Navigate the the Widgets Menu
 4. Locate the Faithlife News Widget and drag it to the widget pane where you want to display news content 
 5. Configure the Faithlife News Widget settings and hit 'Save'
