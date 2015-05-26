@@ -3,7 +3,7 @@
 Plugin Name: Faithlife News Widget
 Plugin URI: https://news.faithlife.com
 Description: Add the latest breaking Christian news to your Wordpress site
-Version: 1.0.1
+Version: 1.1.0
 Author: Michael Jordan
 Author URI: http://michaeljordanmedia.com
 Network: true
@@ -20,34 +20,27 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
 
+
 // Block direct requests
 if ( !defined('ABSPATH') )
 die('-1');
 
 
-add_action( 'widgets_init', function(){
+
+add_action( 'widgets_init', 'register_faithlifenews_widget');
+
+function register_faithlifenews_widget() {
 	register_widget( 'Faithlife_News_Widget' );
-	faithlife_news_admin_init();
-});
-
-function faithlife_news_admin_styles() {
-    wp_enqueue_style( 'FaithlifeNewsWidgetAdminStylesheet' );
+	faithlife_news_init();	
 }
 
-function faithlife_news_frontend_styles() {
-	wp_enqueue_style( 'FaithlifeNewsWidgetFrontendStylesheet' );
-}
-
-function faithlife_news_admin_init() {
-   wp_register_style( 'FaithlifeNewsWidgetAdminStylesheet', plugins_url('/css/admin_style.css', __FILE__) );
-   wp_register_style( 'FaithlifeNewsWidgetFrontendStylesheet', plugins_url('/css/style.css', __FILE__) );
-}
-
-function faithlife_news_addreftagger_script() {
-	wp_enqueue_script( 'reftagger-light', plugins_url('/js/reftagger-light.js', __FILE__), array(), '1.0.0', true );
-}
-function faithlife_news_addreftagger_script_dark() {
-	wp_enqueue_script( 'reftagger-dark', plugins_url('/js/reftagger-dark.js', __FILE__), array(), '1.0.0', true );
+function faithlife_news_init() {
+   wp_register_style( 'FaithlifeNewsWidgetAdminStylesheet', plugins_url('/css/fln_admin_style.css', __FILE__) );
+   wp_register_style( 'FaithlifeNewsWidgetFrontendStylesheet', plugins_url('/css/fln_style.css', __FILE__) );
+   wp_register_script('FaithlifeNewsWidgetReftagger', 'http://fln.s3.amazonaws.com/js/reftagger-light.js','','1.0',true);
+   wp_enqueue_style( 'FaithlifeNewsWidgetFrontendStylesheet' );
+   wp_enqueue_style( 'FaithlifeNewsWidgetAdminStylesheet' );
+   wp_enqueue_script( 'FaithlifeNewsWidgetReftagger' );
 }
 
 
@@ -68,7 +61,20 @@ class Faithlife_News_Widget extends WP_Widget {
 		
 		$this->fln_config = require('config.php');
 		
-		$source_json = file_get_contents($this->fln_config['api']['sources']); 
+		//prepare query
+		$args['api_key'] = $this->fln_config['api']['key'];
+		$getdata = http_build_query($args);
+		$opts = array('http' =>
+			array(
+				'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                    "Content-Length: ".strlen($getdata)."\r\n",
+				'method'  => 'POST',
+				'content' => $getdata,
+			)
+		);
+		$context  = stream_context_create($opts);
+		
+		$source_json = file_get_contents($this->fln_config['api']['sources'], false, $context); 
 		$source_data = json_decode($source_json);
 		$this->fln_sources = $source_data->sources;
 	}
@@ -89,7 +95,7 @@ class Faithlife_News_Widget extends WP_Widget {
 		//set args to query the API
 		$article_args['api_key'] = $this->fln_config['api']['key'];
 		$article_args['articlecount'] = (isset($instance['articlecount'])) ? $instance['articlecount'] : 5;
-		$article_args['sources'] = [];
+		$article_args['sources'] = array();
 		foreach($instance['sources'] as $n) {
 			if ($instance['sources'][$n->ID]->Checked == 1) {
 				array_push($article_args['sources'], $n->ID);
@@ -100,14 +106,16 @@ class Faithlife_News_Widget extends WP_Widget {
 		$getdata = http_build_query($article_args);
 		$opts = array('http' =>
 			array(
-				'method'  => 'GET',
+				'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                    "Content-Length: ".strlen($getdata)."\r\n",
+				'method'  => 'POST',
 				'content' => $getdata
 			)
 		);
 		$context  = stream_context_create($opts);
 		
 		//execute query
-		$result = file_get_contents( $this->fln_config['api']['articles'].'?'.$getdata, false, $context);
+		$result = file_get_contents( $this->fln_config['api']['articles'], false, $context);
 		$data = json_decode($result, true);
 		
 		//
@@ -158,19 +166,21 @@ class Faithlife_News_Widget extends WP_Widget {
 
 		echo '</div>';
 		
-		//load widget styles
-		faithlife_news_frontend_styles();
-		
 		
 		//Add reftagger script
 		if ($instance[ 'addreftagger' ] == 1) {
 			if ($instance[ 'colorscheme' ] == 'dark') {
-				faithlife_news_addreftagger_script_dark();
-			} else {
-				faithlife_news_addreftagger_script();
-			}
-		}
-		
+				wp_deregister_script('FaithlifeNewsWidgetReftagger');
+			    wp_register_script('FaithlifeNewsWidgetReftagger', 'http://fln.s3.amazonaws.com/js/reftagger-dark.js','','1.0',true);
+			    wp_enqueue_script( 'FaithlifeNewsWidgetReftagger' );
+		    } else {
+			    wp_deregister_script('FaithlifeNewsWidgetReftagger');
+			    wp_register_script('FaithlifeNewsWidgetReftagger', 'http://fln.s3.amazonaws.com/js/reftagger-light.js','','1.0',true);
+			    wp_enqueue_script( 'FaithlifeNewsWidgetReftagger' );
+		    }
+		} else {
+			wp_deregister_script('FaithlifeNewsWidgetReftagger');
+		}	
 		
 		echo $after_widget;
 	}
@@ -251,10 +261,10 @@ class Faithlife_News_Widget extends WP_Widget {
 		
 		
 		//if instance sets sources get them, otherwise default to all
+		$selected_sources = array();
 		if ( isset( $instance[ 'sources' ] ) ) {
 			$selected_sources = $instance[ 'sources' ];
 		} else {
-			$selected_sources = array();
 			foreach($this->fln_sources as $s) {
 				$selected_sources[$s->ID]->Checked = 1;
 			}
@@ -285,11 +295,8 @@ class Faithlife_News_Widget extends WP_Widget {
 		
 		$is_checked = ($addreftagger) ? 'checked="checked"' : '';
 		
-		echo '<p><label class="fln_noselect"><input class="checkbox" type="checkbox" value="1" name="'.$this->get_field_name('addreftagger').'" id="'.$this->get_field_id('addreftagger') .'" '. $is_checked .'>Include <a href="http://reftagger.com/">Reftagger</a> with this widget</label></p>';
+		echo '<p><label class="fln_noselect"><input class="checkbox" style="margin-right: 5px;" type="checkbox" value="1" name="'.$this->get_field_name('addreftagger').'" id="'.$this->get_field_id('addreftagger') .'" '. $is_checked .'>Include <a href="http://reftagger.com/">Reftagger</a> with this widget</label></p>';
 		
-		
-		//load widget styles
-		faithlife_news_admin_styles();
 				
 	}
 	
@@ -301,7 +308,7 @@ class Faithlife_News_Widget extends WP_Widget {
 		$instance['articlecount'] = ( ! empty( $new_instance['articlecount'] ) ) ? strip_tags( $new_instance['articlecount'] ) : '';
 		$instance['format'] = ( ! empty( $new_instance['format'] ) ) ? strip_tags( $new_instance['format'] ) : 0;
 		$instance['colorscheme'] = ( ! empty( $new_instance['colorscheme'] ) ) ? strip_tags( $new_instance['colorscheme'] ) : 'light';	
-		$instance['addreftagger'] = ( ! empty( $new_instance['addreftagger'] ) ) ? strip_tags( $new_instance['addreftagger'] ) : 1;		
+		$instance['addreftagger'] = ( isset($new_instance['addreftagger']) && ($new_instance['addreftagger'] == 1 )) ? 1 : 0;		
 
 	    foreach($this->fln_sources as $n){
 	        $instance['sources'][$n->ID]->Checked = ((isset($new_instance['sources'][$n->ID])) && ($new_instance['sources'][$n->ID] == 1)) ? 1 : 0;
