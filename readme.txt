@@ -4,7 +4,7 @@ Donate link: http://michaeljordanmedia.com
 Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,10 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 
 == Changelog ==
 
+= 1.0.2 =
+* Bug fixes
+* Compatibility with older versions of PHP
+
 = 1.0.1 =
 * Bug fixes
 
@@ -59,7 +63,7 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 
 == Upgrade notice ==
 
-= 1.0.1 =
+= 1.0.2 =
 Please upgrade to the latest version
 
 
