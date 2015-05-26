@@ -3,7 +3,7 @@
 Plugin Name: Faithlife News Widget
 Plugin URI: https://news.faithlife.com
 Description: Add the latest breaking Christian news to your Wordpress site
-Version: 1.0.1
+Version: 1.0.2
 Author: Michael Jordan
 Author URI: http://michaeljordanmedia.com
 Network: true
@@ -20,15 +20,18 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 */
 
+
 // Block direct requests
 if ( !defined('ABSPATH') )
 die('-1');
 
 
-add_action( 'widgets_init', function(){
+add_action( 'widgets_init', 'register_faithlifenews_widget');
+
+function register_faithlifenews_widget() {
 	register_widget( 'Faithlife_News_Widget' );
 	faithlife_news_admin_init();
-});
+}
 
 function faithlife_news_admin_styles() {
     wp_enqueue_style( 'FaithlifeNewsWidgetAdminStylesheet' );
@@ -89,7 +92,7 @@ class Faithlife_News_Widget extends WP_Widget {
 		//set args to query the API
 		$article_args['api_key'] = $this->fln_config['api']['key'];
 		$article_args['articlecount'] = (isset($instance['articlecount'])) ? $instance['articlecount'] : 5;
-		$article_args['sources'] = [];
+		$article_args['sources'] = array();
 		foreach($instance['sources'] as $n) {
 			if ($instance['sources'][$n->ID]->Checked == 1) {
 				array_push($article_args['sources'], $n->ID);
