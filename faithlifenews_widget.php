@@ -26,10 +26,12 @@ if ( !defined('ABSPATH') )
 die('-1');
 
 
-add_action( 'widgets_init', function(){
+add_action( 'widgets_init', 'register_faithlifenews_widget');
+
+function register_faithlifenews_widget() {
 	register_widget( 'Faithlife_News_Widget' );
 	faithlife_news_admin_init();
-});
+}
 
 function faithlife_news_admin_styles() {
     wp_enqueue_style( 'FaithlifeNewsWidgetAdminStylesheet' );
