@@ -92,7 +92,7 @@ class Faithlife_News_Widget extends WP_Widget {
 		//set args to query the API
 		$article_args['api_key'] = $this->fln_config['api']['key'];
 		$article_args['articlecount'] = (isset($instance['articlecount'])) ? $instance['articlecount'] : 5;
-		$article_args['sources'] = [];
+		$article_args['sources'] = array();
 		foreach($instance['sources'] as $n) {
 			if ($instance['sources'][$n->ID]->Checked == 1) {
 				array_push($article_args['sources'], $n->ID);
