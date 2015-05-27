@@ -35,8 +35,8 @@ function register_faithlifenews_widget() {
 }
 
 function faithlife_news_init() {
-   wp_register_style( 'FaithlifeNewsWidgetAdminStylesheet', plugins_url('/css/fln_admin_style.css', __FILE__) );
-   wp_register_style( 'FaithlifeNewsWidgetFrontendStylesheet', plugins_url('/css/fln_style.css', __FILE__) );
+   wp_register_style( 'FaithlifeNewsWidgetAdminStylesheet', plugins_url('/css/admin_style.css', __FILE__) );
+   wp_register_style( 'FaithlifeNewsWidgetFrontendStylesheet', plugins_url('/css/style.css', __FILE__) );
    wp_register_script('FaithlifeNewsWidgetReftagger', 'http://fln.s3.amazonaws.com/js/reftagger-light.js','','1.0',true);
    wp_enqueue_style( 'FaithlifeNewsWidgetFrontendStylesheet' );
    wp_enqueue_style( 'FaithlifeNewsWidgetAdminStylesheet' );
