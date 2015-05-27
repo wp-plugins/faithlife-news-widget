@@ -1,7 +1,7 @@
 === Faithlife News Widget ===
 Contributors: mejordan
 Donate link: http://michaeljordanmedia.com
-Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
+Tags: Christian News, Church news, news feed, news aggregator, Faithlife, Christianity, news, widget, plugin, feed, content, sidebar
 Requires at least: 3.3
 Tested up to: 4.2.2
 Stable tag: 1.1.0
@@ -13,6 +13,23 @@ Add the latest breaking Christian news to your site, updated every 15 minutes.
 == Description ==
 
 [Faithlife News](https://news.faithlife.com) is a Christian news aggregation service that updates every 15 minutes with articles from multiple Christian news sites and blogs. When you add the Faithlife News Widget to any widget area on your site, up-to-the-minute content will be displayed automatically. Customize your news channel preferences. Display up to 10 article links in three different formats. You can also optionally enable [Reftagger](http://reftagger.com/) which will tag all Bible verse references on your site.
+
+Automatically add content from sites like:
+* [The Gospel Coalition](http://www.thegospelcoalition.org)
+* [Christianity Today](http://www.christianitytoday.com)
+* [Gospel Herald](http://www.gospelherald.com)
+* [Desiring God](http://www.desiringgod.org)
+* [Relevant Magazine](http://www.relevantmagazine.com)
+* [World Magazine](http://allchristiannews.com)
+* [Mission Network News](http://mnnonline.org)
+* [The Christian Post](http://www.christianpost.com)
+* [Church Leaders](http://www.churchleaders.com)
+* [Crosswalk](http://www.crosswalk.com)
+* [Ministry Matters](http://www.ministrymatters.com)
+* And [more...](https://news.faithlife.com/channels/)
+
+Follow Faithlife News on [Facebook](https://www.facebook.com/faithlifenews) and [Twitter](https://twitter.com/faithlifenews)
+Have a suggestion? Visit the Faithlife News website to [suggest new content channels](https://news.faithlife.com/channels/)
 
 == Installation ==
 
