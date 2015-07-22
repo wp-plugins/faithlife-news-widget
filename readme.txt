@@ -1,10 +1,10 @@
 === Faithlife News Widget ===
 Contributors: mejordan
 Donate link: http://michaeljordanmedia.com
-Tags: Christian News, Church News, News Feed, News Aggregator, Faithlife, Christianity
+Tags: Christian News, Church News, Church, Christian, Christianity, News Feed, News, Faithlife, widget, sidebar, content, feed
 Requires at least: 3.3
 Tested up to: 4.2.2
-Stable tag: 1.1.0
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,6 +50,9 @@ Reftagger automatically tags Bible verse references on your site and creates a t
 6. With the Reftagger option enabled, Bible verse references on your site will be tagged
 
 == Changelog ==
+
+= 2.0 =
+* Bug Fixes
 
 = 1.1.0 =
 * Bug Fixes
