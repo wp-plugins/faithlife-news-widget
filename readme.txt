@@ -1,7 +1,7 @@
 === Faithlife News Widget ===
 Contributors: mejordan
 Donate link: http://michaeljordanmedia.com
-Tags: Christian News, church, news feed, Christianity, news, widget, plugin, feed, content, sidebar
+Tags: Christian News, church, Christian, Bible, ministry, news feed, Christianity, news, widget, plugin, feed, content, sidebar
 Requires at least: 3.3
 Tested up to: 4.2.2
 Stable tag: 1.1.0
